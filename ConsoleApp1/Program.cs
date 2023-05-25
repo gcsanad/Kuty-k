@@ -14,3 +14,10 @@ List<kutyakminden> kutyaAdatok = new List<kutyakminden>(File.ReadAllLines("F:\\U
 
 //6.Feladat
 Console.WriteLine($"6.Feladat: {Math.Round(kutyaAdatok.Average(x => x.KutyaEletkora), 2)}");
+
+//7.Feladat
+int eletkor = kutyaAdatok.OrderByDescending(x => x.KutyaEletkora).ToList()[0].FajAzon;
+int azonosito = kutyaAdatok.OrderByDescending(x => x.KutyaEletkora).ToList()[0].NevAzon;
+string kutyaNeve = kutyakNeve.Where(x => x.Azonosito == azonosito).ToList()[0].KutyaNeve;
+string kutyaFajtaja = kutyaNevTipusok.Where(x => x.Azonosito == eletkor).ToList()[0].MagyarNev;
+Console.WriteLine($"7.Feladat: Legidősebb kutya neve és fajtája: {kutyaNeve}, {kutyaFajtaja}");
