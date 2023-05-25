@@ -11,12 +11,14 @@ namespace ConsoleApp1
         int azonosito;
         string kutyaNeve;
 
-        public kutyak(string sor)
+
+        public kutyak(string nevek)
         {
-            string[] felosztas = sor.Split(';');
+            string[] felosztas = nevek.Split(';');
             this.azonosito = int.Parse(felosztas[0]);
             this.kutyaNeve = felosztas[1];
         }
+
 
         public int Azonosito { get => azonosito;}
         public string KutyaNeve { get => kutyaNeve;}
